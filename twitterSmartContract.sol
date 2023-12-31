@@ -1,11 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-// 1️⃣ Create Event for creating the tweet, called TweetCreated ✅
-// USE parameters like id, author, content, timestamp
-// 2️⃣ Emit the Event in the createTweet() function below  ✅
-// 3️⃣ Create Event for liking the tweet, called TweetLiked ✅ 
-// USE parameters like liker, tweetAuthor, tweetId, newLikeCount
-// 4️⃣ Emit the event in the likeTweet() function below  ✅
+// 1️⃣ Create a function, getTotalLikes, to get total Tweet Likes for the user
+// USE parameters of author
+// 2️⃣ Loop over all the tweets 
+// 3️⃣ Sum up totalLikes 
+// 4️⃣ Return totalLikes 
 
 pragma solidity ^0.8.0;
 
