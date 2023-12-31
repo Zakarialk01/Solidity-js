@@ -1,10 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-// 1️⃣ Create a function, getTotalLikes, to get total Tweet Likes for the user
-// USE parameters of author
-// 2️⃣ Loop over all the tweets 
-// 3️⃣ Sum up totalLikes 
-// 4️⃣ Return totalLikes 
+// 1️⃣ Import Ownable.sol contract from OpenZeppelin
+// 2️⃣ Inherit Ownable Contract
+// 3️⃣ Replace current onlyOwner 
 
 pragma solidity ^0.8.0;
 
@@ -38,6 +36,16 @@ contract Twitter {
 
     function changeTweetLength(uint16 newTweetLength) public onlyOwner {
         MAX_TWEET_LENGTH = newTweetLength;
+    }
+
+    function getTotalLikes(address _author) external view returns(uint) {
+        uint totalLikes;
+
+        for( uint i = 0; i < tweets[_author].length; i++){
+            totalLikes += tweets[_author][i].likes;
+        }
+
+        return totalLikes;
     }
 
     function createTweet(string memory _tweet) public {
